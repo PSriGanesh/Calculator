@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+			body {
+				margin: 0;
+				padding: 0;
+				display: flex;
+				font-family: Poppins,sans-serif;
+				flex: 1;
+				min-height: 100vh;
+				justify-content: center;
+				align-items: center;
+			}
+			#container {
+				width: 350px;
+				display: flex;
+				gap: 15px;
+				background-color: #212121;
+				justify-content: center;
+				flex-wrap: wrap;
+				padding: 25px 0px;
+				border-radius: 20px;
+				box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+			}
+			/*.numb,.operator,#point,.equal,#delt,#clear*/
+			.butt{
+				width: 70px;
+				display: flex;
+				height: 70px;
+				color: white;
+				border-radius: 40px;
+				font-size: 1.5em;
+				background: #616161;
+				justify-content: center;
+				align-items: center;
+				user-drag: none;
+				-webkit-user-drag: none;
+				user-select: none;
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
+			.butt:hover {
+				transform:translate(0px,-2px);
+				
+			}
+			.butt:active {
+				transform:translate(0px,2px);
+			}
+			#view,#screen {
+				box-sizing: border-box;
+				padding-right: 10px;
+				min-height: 70px;
+				font-size: 2.5em;
+				min-width: 295px;
+			}
+			#display{
+				text-align: right;
+				background: #616161;
+				width: 300px;
+				border-radius: 25px;
+				min-height: 120px;
+				padding-bottom: 0px;
+				color: white;
+			}
+			#delt,#clear {
+				width: 143px;
+			}
+			table {
+				border-spacing: 5px;
+			}
+		</style>
+		<script src='script.js' defer></script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="display">
+				<div id="view"></div>
+				<div id="screen"></div>
+			</div>
+			<table>
+				<tr>
+					<td colspan="2"><div id="delt" class="butt" data-board="8">Delete</div></td>
+					<td colspan="2"><div id="clear" class="butt" data-board="27">Clear</div></td>
+				</tr>
+				<tr>
+					<td><div data-key="1" data-board="97" class="numb butt">1</div></td>
+					<td><div data-key="2" data-board="98" class="numb butt">2</div></td>
+					<td><div data-key="3" data-board="99" class="numb butt">3</div></td>
+					<td><div data-key="+" data-board="107" class="operator butt">+</div></td>
+				</tr>
+				<tr>
+					<td><div data-key="4" data-board="100" class="numb butt">4</div></td>
+					<td><div data-key="5" data-board="101" class="numb butt">5</div></td>
+					<td><div data-key="6" data-board="102" class="numb butt">6</div></td>
+					<td><div data-key="-" data-board="109" class="operator butt">-</div></td>
+					
+				</tr>
+				<tr>
+					<td><div data-key="7" data-board="103" class="numb butt">7</div></td>
+					<td><div data-key="8" data-board="104" class="numb butt">8</div></td>
+					<td><div data-key="9" data-board="105" class="numb butt">9</div></td>
+					<td><div data-key="*" data-board="106" class="operator butt">*</div></td>
+				</tr>
+				<tr>
+					<td><div data-key="." data-board="110" id="point" class="butt">.</div></td>
+					<td><div data-key="0" data-board="96" class="numb butt">0</div></td>	
+					<td><div data-key="=" data-board="13" class="equal butt">=</div></td>
+					<td><div data-key="/" data-board="111" class="operator butt">/</div></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>
